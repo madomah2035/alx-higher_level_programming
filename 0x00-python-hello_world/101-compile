@@ -1,26 +1,2 @@
 #!/bin/bash
-
-# Check if the PYFILE environment variable is set
-if [ -z "$PYFILE" ]; then
-    echo "Error: PYFILE environment variable not set."
-    exit 1
-fi
-
-# Check if the specified Python file exists
-if [ ! -f "$PYFILE" ]; then
-    echo "Error: Python file '$PYFILE' not found."
-    exit 1
-fi
-
-# Compile the Python script
-python3 -m compileall "$PYFILE"
-
-# Rename the compiled file to have a 'c' suffix
-compiled_file="${PYFILE}c"
-mv "__pycache__/$compiled_file" .
-
-# Clean up the __pycache__ directory
-rmdir "__pycache__"
-
-echo "Compilation successful. Compiled file: $compiled_file"
-
+python3 -c "import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')"
