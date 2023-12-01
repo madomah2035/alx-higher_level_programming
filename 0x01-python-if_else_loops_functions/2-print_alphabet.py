@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-for alpha in range(ord('a'), ord('z') + 1):
-    print(chr(alpha), end="")
+print("".join(["{}".format(chr(i)) for i in range(97, 123)]), end="")
