@@ -6,4 +6,4 @@ def uppercase(str):
         else:
             upper = letter
         print("{}".format(upper), end="")
-    print("{}".format("\n"))
+    print("{}".format(""))
