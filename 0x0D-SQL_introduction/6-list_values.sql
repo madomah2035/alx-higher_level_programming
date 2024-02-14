@@ -1,4 +1,3 @@
---lists all rows of first_table
-USE `hbtnc_0c_0`;
+-- lists all rows of first_table
 SELECT * FROM `first_table`;
 
